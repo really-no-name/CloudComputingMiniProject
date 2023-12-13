@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>系统主页-图书管理</title>
+    <title>System Homepage-Library Management</title>
     <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
     <style>
@@ -77,13 +77,13 @@
     <div class="topbar-inner clearfix">
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a>图书管理系统</a></li>
+                <li><a>Library Management System</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="main-wrap">
-    <h3 style="text-align:center;">修改图书信息</h3>
+    <h3 style="text-align:center;">Modify Book Information</h3>
     <div class="result-wrap">
         <div class="result-content">
             {% for i in detail %}
@@ -95,30 +95,30 @@
                                 <td><input class="common-text" name="number" type="text" value="{{ i[0] }}"></td>
                             </tr>
                             <tr>
-                                <th>书名：</th>
+                                <th>Name：</th>
                                 <td><input class="common-text" name="bookname" type="text" value="{{ i[1] }}"></td>
                             </tr>
                             <tr>
-                                <th>作者：</th>
+                                <th>Author：</th>
                                 <td><input class="common-text" name="author" type="text" value="{{ i[2] }}"></td>
                             </tr>
                             <tr>
-                                <th>出版日期：</th>
+                                <th>Publication Date：</th>
                                 <td><input class="common-text" type="date" name="pdate" id="pdate" min="1900-01-01" value="{{ i[3] }}"></td>
                             </tr>
                             <tr>
-                                <th>位置：</th>
+                                <th>Placement：</th>
                                 <td><input class="common-text" name="address" type="text" value="{{ i[4] }}"></td>
                             </tr>
                             <tr>
-                                <th>描述：</th>
+                                <th>Description：</th>
                                 <td><input class="common-text" name="description" type="text" value="{{ i[5] }}"></td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="error-message">{{ get_flashed_messages()[0] }}</div>
-                    <input type="submit" value="修改">
-                    <a href="{{ url_for("changebook") }}">返回修改书籍界面</a>
+                    <input type="submit" value="Modify">
+                    <a href="{{ url_for("changebook") }}">Return to Modify Book screen</a>
                 </form>
             {% endfor %}
         </div>
