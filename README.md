@@ -1,47 +1,47 @@
 
-### **Chapter I：前端设计**
+### **Chapter I：Front-end design**
 
 ![img](./static/images/login.png) 
 
-表 1登录界面
+Table 1 Login interface
 
 ![img](./static/images/register.png) 
 
-表 2注册界面
+Table 2 Registration interface
 
 ![img](./static/images/add.png) 
 
-表 3添加书籍
+Table 3 Add books
 
 ![img](./static/images/delete.png) 
 
-表 4删除书籍
+Table 4 Delete Books
 
 ![img](./static/images/update.png) 
 
-表 5修改书籍
+Table 5 Modify Books
 
  
 
 ![img](./static/images/query.png) 
 
-表 6查找书籍
+Table 6 Find Books
 
 ![img](./static/images/record.png) 
 
-表 7借阅记录
+Table 7 Borrowing records
 
 ![img](./static/images/info.png) 
 
-表 8读者信息
+Table 8 Reader information
 
-### **第二章：数据库设计**
+### **Chapter 2: Database Design**
 
-#### **4.1 **数据表的设计及部分初始数据的输入
+#### **4.1 **Design of data table and input of some initial data
 
 
 
-表1  book书籍信息表
+Table 1 book information table
 
 | 字段名称        | 数据类型 | 默认值 | 长度 | 说明                       |
 | --------------- | -------- | ------ | ---- | -------------------------- |
@@ -56,7 +56,18 @@
 | Borrowname      | Varchar  | 无     | 20   | 借书人姓名                 |
 | Borrowtime      | Date     | 无     | 10   | 借书时间                   |
 
-
+| Field name      | Data type  | Default value | Length | Description                 |
+| --------------- | ---------- | ------------- | ------ | --------------------------- |
+| ID              | Int        | None          | 4      | DataId value                |
+| Name | Varchar | None | 20 | Book Title |
+| Number | Varchar | None | 8 | Book serial number |
+| Author | Varchar | None | 10 | Author |
+| Publicationdate | Date | None | 10 | Publication date |
+| Isborrow | Int | None | 1 | Borrowing status (1: Borrowed, 0: Not borrowed) |
+| Remark | Varchar | None | 50 | Book Introduction |
+| Location | Varchar | None | 20 | Book Locations |
+| Borrowname | Varchar | None | 20 | Borrower name |
+| Borrowtime | Date | None | 10 | Borrowing time |
 
 表2  student读者信息表
 
