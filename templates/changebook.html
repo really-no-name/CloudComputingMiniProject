@@ -161,13 +161,13 @@
 <script>
     function change_book(bookid, bookname) {
         // Updated news
-        document.querySelector("#confirmBox .message").innerText = "确认修改书名为：" + bookname + " 的书籍吗？";
+        document.querySelector("#confirmBox .message").innerText = "Confirmation to modify books with title:：" + bookname + " ？";
 
-        // 显示遮罩层和弹出窗口
+        // Displaying Mask Layers and Popups
         document.getElementById("overlay").style.display = 'block';
         document.getElementById("confirmBox").style.display = 'block';
 
-        // 确认修改
+        // Confirm modification
         document.getElementById("yes").onclick = function () {
             window.location.href = "changebookinfor/" + bookid;
             fetch('changebookinfor/' + bookid, {method: 'GET'})
@@ -183,10 +183,10 @@
                 document.getElementById("overlay").style.display = 'none';
                 document.getElementById("confirmBox").style.display = 'none';
             })
-            // 关闭弹窗和遮罩层
+            // Close pop-ups and mask layers
         };
 
-        // 取消修改
+        // Modification cancellation
         document.getElementById("no").onclick = function () {
             document.getElementById("overlay").style.display = 'none';
             document.getElementById("confirmBox").style.display = 'none';
