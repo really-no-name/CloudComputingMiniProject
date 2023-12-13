@@ -1,9 +1,9 @@
-#Model层
+#Model layer
 
-#导入数据库操作工具类
+# Import database operation tool class
 from  mysqlUtils import MysqlUtils
 
-#书籍bean类 属性number name author publiccationdate location remark
+#Bookbean Class Attributes number name author publiccationdate location remark
 class book(object):
     def __init__(self, number ,name,author,publicationdate,location ,remark ):
         self.number = number
@@ -13,14 +13,14 @@ class book(object):
         self.location=location
         self.remark=remark
 
-#书籍model
+#Bookmodel
 class bookModel(object):
 
-    #初始化 建立数据库连接
+    # Initialise Establish database connection
     def __init__(self):
         self.util = MysqlUtils('34.147.132.176', 'demo', 'fcsummer123456', 'library', 'utf8')
 
-    #查询所有书籍
+    #Search All Books
     def get_all_book_data(self):
         self.u = self.util.query_all_book()
         book_list = []
@@ -35,7 +35,7 @@ class bookModel(object):
             book_list.append(book(i[0], i[1], i[2], i[3], i[4], i[5]))
         return book_list
 
-    #查询一本书
+    # Query a book
     def get_one_book_data(self,bookname):
         self.u = self.util.query_one_book(bookname)
         one_book = []
@@ -43,11 +43,11 @@ class bookModel(object):
             one_book.append(book(i[0], i[1], i[2], i[3], i[4],i[5]))
         return one_book
 
-    #根据id删除一本书
+    #Delete a book based on id
     def delete_one_book_by_id(self,bookid):
         self.util.delete_book(bookid)
 
-    #添加书籍
+    #add books
     def add_book(self,number,name,author,publicationdate,location,remark):
         self.util.add_book(number,name,author,publicationdate,location,remark)
 
