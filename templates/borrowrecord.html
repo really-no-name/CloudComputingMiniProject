@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>系统主页-借阅信息</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
+</head>
+<body>
+
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="top-info-wrap">
+            <ul class="top-info-list clearfix">
+                <li><a>图书管理系统</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container clearfix">
+     <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>菜单</h1>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-list">
+                <li>
+                    <ul class="sub-menu">
+                       <li><a href="{{ url_for("addbook") }}">图书添加</a></li>
+                        <li><a href="{{ url_for("deletebook") }}">图书删除</a></li>
+                        <li><a href="{{ url_for("changebook") }}">图书修改</a></li>
+                        <li><a href="{{ url_for("querybook") }}">图书查询</a></li>
+                        <li><a href="{{ url_for("borrowrecord") }}">借阅记录</a></li>
+                        <li><a href="{{ url_for("readerinfor") }}">读者信息</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--/sidebar-->
+  <div class="main-wrap">
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                         <tr id="col-title">
+                            <th>ID</th>
+                            <th>书名</th>
+                            <th>位置</th>
+                            <th>借阅人姓名</th>
+                            <th>借阅时间</th>
+                        </tr>
+                        {% for record in records %}
+                          <tr>
+                            <td>{{ record.book_id }}</td>
+                            <td>{{ record.book_name }}</td>
+                            <td>{{ record.location }}</td>
+                            <td>{{ record.borrow_stu_name }}</td>
+                            <td>{{ record.borrow_time }}</td>
+                          </tr>
+                          {% endfor %}
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+
+</body>
+</html>
+
+

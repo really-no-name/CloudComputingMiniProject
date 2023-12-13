@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统主页-图书管理</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
+    <style>
+        .main-wrap {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .insert-tab {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .insert-tab th, .insert-tab td {
+            border: 1px solid #ebeef5;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .insert-tab th {
+            background-color: #f5f7fa;
+            color: #606266;
+        }
+
+        .common-text {
+            width: 95%;
+            padding: 8px 10px;
+            margin: 6px 0;
+            display: inline-block;
+            border: 1px solid #dcdfe6;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #409EFF;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #66b1ff;
+        }
+
+        a {
+            color: #409EFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="top-info-wrap">
+            <ul class="top-info-list clearfix">
+                <li><a>图书管理系统</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main-wrap">
+    <h3 style="text-align:center;">修改图书信息</h3>
+    <div class="result-wrap">
+        <div class="result-content">
+            {% for i in detail %}
+                <form id="add-book" action="/changebookinfor/{{ i[0] }}" method="POST">
+                    <table class="insert-tab">
+                        <tbody>
+                            <tr>
+                                <th>ID：</th>
+                                <td><input class="common-text" name="number" type="text" value="{{ i[0] }}"></td>
+                            </tr>
+                            <tr>
+                                <th>书名：</th>
+                                <td><input class="common-text" name="bookname" type="text" value="{{ i[1] }}"></td>
+                            </tr>
+                            <tr>
+                                <th>作者：</th>
+                                <td><input class="common-text" name="author" type="text" value="{{ i[2] }}"></td>
+                            </tr>
+                            <tr>
+                                <th>出版日期：</th>
+                                <td><input class="common-text" type="date" name="pdate" id="pdate" min="1900-01-01" value="{{ i[3] }}"></td>
+                            </tr>
+                            <tr>
+                                <th>位置：</th>
+                                <td><input class="common-text" name="address" type="text" value="{{ i[4] }}"></td>
+                            </tr>
+                            <tr>
+                                <th>描述：</th>
+                                <td><input class="common-text" name="description" type="text" value="{{ i[5] }}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="error-message">{{ get_flashed_messages()[0] }}</div>
+                    <input type="submit" value="修改">
+                    <a href="{{ url_for("changebook") }}">返回修改书籍界面</a>
+                </form>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+</script>
+</html>
