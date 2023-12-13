@@ -1,3 +1,57 @@
+# Book Manager
+
+Book Manager is a simple book management system based on Flask and Google Books API. It allows users to search for books, view detailed information, and manage their personal book collections and borrowing information.
+
+## Features
+- Search books.
+- View book details.
+- Manage personal book collection.
+- View borrowing information and reader information
+
+## Installation Guide
+
+### Environmental requirements
+- Python 3.6+
+- Flask
+
+### installation steps
+
+1. **Clone repository**
+
+     ```bash
+     git clone https://github.com/really-no-name/CloudComputingMiniProject.git
+     cd CloudComputingMiniProject
+     ```
+    Or use via ssh：
+     ```bash
+     git clone git@github.com:really-no-name/CloudComputingMiniProject.git
+     cd CloudComputingMiniProject
+     ```
+
+2. **Install dependencies**
+
+     Run in the project directory:
+
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+## Run the application
+
+Run in the project directory:
+
+```bash
+python3 app.py
+```
+
+Visit `http://External IP:8721` to view the application.
+
+## Function Description
+
+- **Search books**: Visit `/querybook` to search for books.
+- **Add book to collection**: Send a POST request to `/addbook` to add a book to your collection.
+- **Revise book in collection**: Send a PUT request to `/changebook` to update a specific book in your collection.
+- **Delete book from collection**: Send a DELETE request to `/deletebook` to remove a book from your collection.
 
 ### **Chapter I：Front-end design**
 
@@ -98,3 +152,12 @@ Table 4 record end record information table
 ### **Chapter 3: Summary**
 
 CURD of this library project is fully implemented, and the front-end uses fetch to request the REST-API service interface, perform additions, deletions, modifications, and queries, and connects to GCP-Mysql for data storage.
+
+
+## Contribute
+
+Contributions of any kind are welcome. Please ensure that your code follows this project's design and coding guidelines.
+
+## License
+
+This project is licensed under the MIT license. See the `LICENSE` file for more information.
