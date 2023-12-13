@@ -1,3 +1,3 @@
-workers = 5    # 定义同时开启的处理请求的进程数量，根据网站流量适当调整
-worker_class = "gevent"   # 采用gevent库，支持异步处理请求，提高吞吐量
+workers = 5    # Define the number of processes that are opened at the same time to handle requests, and adjust accordingly according to the website traffic.
+worker_class = "gevent"   # Use the gevent library to support asynchronous processing of requests and improve throughput
 bind = "0.0.0.0:8888"
