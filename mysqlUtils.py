@@ -23,69 +23,70 @@ class MysqlUtils():
         #     # ('june', '258'),
         #     # ('marin', '369')
         # ]
-        # # 拼接并执行sql语句
+        # # Splice and execute sql statements
         # self.cur.executemany(sqlstr, data)
-        #添加单条数据
+        #Add a single piece of data
         sqlstr="insert into book (number,name,author,publicationdate,location ,remark) " \
                "values( '"+number+"','"+name+"','"+author+"','"+publicationdate+"','"+location+"','"+remark+"');"
         self.cur.execute(sqlstr)
-        # 涉及写操作要注意提交
+        # Pay attention to submission when writing operations are involved
         self.conn.commit()
 
-    #删除书籍  根据书籍id删除
-    def delete_book(self, bookid):
+#Delete books Delete based on book id
+        def delete_book(self, bookid):
         sqlstr="delete from book where number = '" + bookid + "';"
-        #拼接并执行sql语句
+        #Splice and execute sql statements
         self.cur.execute(sqlstr)
-        # 涉及写操作要注意提交
+        # Pay attention to submission when writing operations are involved
         self.conn.commit()
 
-    # #修改书籍    #先删除 后添加  来实现修改功能
+    # #Modify books    
+    #Delete first and then add to implement the modification function
     # def change_book(self,number,name,author,publicationdate,location ,remark):
 
-    # 查找所有书籍
+    # Find all books
     def query_all_book(self):
         self.cur.execute('SELECT number ,name,author,publicationdate,location ,remark FROM book order by number')
         result = self.cur.fetchall()
         return result
 
-    #查找指定书籍(参数：书名) 根据书籍名称查询书籍
+    #Search for specified books (parameter: book title) Search for books based on book names
     def query_one_book(self,name):
         sqlstr="SELECT number ,name,author,publicationdate,location ,remark FROM book WHERE name = '"+name+"'"
         self.cur.execute(sqlstr)
         result = self.cur.fetchall()
         return result
 
-    # 查找指定书籍(参数：书籍id) 根据书籍名称查询书籍
+    # Find the specified book (parameter: book id) Query the book based on the book name
     def query_one_book_byid(self, id):
         sqlstr = "SELECT number ,name,author,publicationdate,location ,remark FROM book WHERE number = '" + id + "'"
         self.cur.execute(sqlstr)
         result = self.cur.fetchall()
         return result
 
-    # 借阅记录查询
+    # Borrowing record query
     def query_borrowrecord(self):
         sqlstr = "SELECT number ,name,location ,borrowname,borrowtime FROM book WHERE isborrow = 1"
         self.cur.execute(sqlstr)
         result = self.cur.fetchall()
         return result
 
-    # 查找读者信息
+    # Find reader information
     def query_readerinfor(self):
         sqlstr = "SELECT name,class,learnnumber,phonenumber,borrownumber FROM student order by id"
         self.cur.execute(sqlstr)
         result = self.cur.fetchall()
         return result
 
-    #注册管理员(参数：账号，密码)
+    #Registered administrator (parameters: account number, password)
     def register_Admin(self,uername,password):
-        # 添加单条数据
+        # Add a single piece of data
         sqlstr = "insert into user (username,psw) values( '" + uername + "','" + password + "');"
         self.cur.execute(sqlstr)
-        # 涉及写操作要注意提交
+        # Pay attention to submission when writing operations are involved
         self.conn.commit()
 
-    #管理员登录(通过账号查询密码)
+    #Administrator login (check password through account)
     def query_Password(self,username):
         sqlstr = "SELECT psw FROM user WHERE username='" + username + "'"
         self.cur.execute(sqlstr)
