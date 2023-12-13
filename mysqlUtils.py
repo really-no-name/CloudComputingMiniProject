@@ -1,8 +1,8 @@
-# 导入mysql数据库
+#Import mysql database
 import pymysql
 
 class MysqlUtils():
-    #初始化
+    #initialization
     def __init__(self,host,user,password,db,charset):
 
         self.host=host
@@ -13,9 +13,9 @@ class MysqlUtils():
         self.conn = pymysql.connect(host=host, user=user, password=password, db=db, charset=charset)
         self.cur = self.conn.cursor()
 
-    # #增加书籍
+    # #add books
     def add_book(self,number,name,author,publicationdate,location ,remark):
-        # 添加多条数据
+        # Add multiple pieces of data
         # sqlstr="insert into book (number,name,author,publicationdate,location ,remark) values(%s,%s,%s,%s,%s,%s);"
         # data = [
         #     ('"+number+"',''"+name+"' , '"+author+"','"+publicationdate+"','"+location+"','"+remark+"')
