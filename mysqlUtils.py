@@ -33,7 +33,7 @@ class MysqlUtils():
         self.conn.commit()
 
 #Delete books Delete based on book id
-        def delete_book(self, bookid):
+    def delete_book(self, bookid):
         sqlstr="delete from book where number = '" + bookid + "';"
         #Splice and execute sql statements
         self.cur.execute(sqlstr)
