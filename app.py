@@ -1,32 +1,32 @@
-# MVC模式
-# controller层
+# MVC pattern
+# controller layer
 
 from flask import Flask, render_template, flash, request, abort, redirect, url_for
 # from models import User
-#导入数据库操作工具类
+#Import database operation tool class
 from  mysqlUtils import MysqlUtils
-#导入json包
+#Import json package
 import json
 
-#MVC模式model层
+#MVC pattern model layer
 from models.readerModel import readerModel
 from models.recordModel import recordModel
 from models.bookModel import bookModel
 util=MysqlUtils('34.147.132.176','demo','fcsummer123456','library','utf8')
-#所有书籍信息
+#All book information
 # u=util.query_all_book()
 
 app = Flask(__name__)
-app.secret_key = '123'#flash加密
+app.secret_key = '123'#flash encryption
 
 @app.route('/')
 def hello_world():
-    flash("")  # 登陆注册提示信息
+    flash("")  # Login registration prompt information
     content = "hello world"
     # return render_template("login.html", content=content)
     return render_template("login.html", content=content)
 
-# 注册
+# register
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == "POST":
@@ -34,22 +34,22 @@ def register():
         username = form.get('username')
         password = form.get('password')
         password2 = form.get('password2')
-        # 前端完成判断内容是否为空
+        # The front end completes judging whether the content is empty
         if not username:
-            flash("请输入用户名")
+            flash("Please enter user name")
             return render_template("register.html")
         if not password:
-            flash("请输入密码")
+            flash("Please enter password")
             return render_template("register.html")
         if not password2:
-            flash("请输入确认密码")
+            flash("Please enter the confirmation password")
             return render_template("register.html")
         if not password == password2:
-            flash("两次密码不一致")
+            flash("Two passwords are inconsistent")
             return render_template("register.html")
-        else:# 注册信息无误，写入数据库
+        else:# The registration information is correct and written to the database.
             util.register_Admin(username, password)
-            flash("注册成功")
+            flash("registration success")
             return render_template("register.html")
     else:
         return render_template("register.html")
