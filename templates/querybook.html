@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>系统主页-图书管理</title>
+    <title>System Homepage-Library Management</title>
     <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="assets/css/pagination.css">
@@ -11,7 +11,7 @@
     <div class="topbar-inner clearfix">
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a>图书管理系统</a></li>
+                <li><a>Library Management System</a></li>
             </ul>
         </div>
     </div>
@@ -20,18 +20,18 @@
 <div class="container clearfix">
     <div class="sidebar-wrap">
         <div class="sidebar-title">
-            <h1>菜单</h1>
+            <h1>Menu</h1>
         </div>
         <div class="sidebar-content">
             <ul class="sidebar-list">
                 <li>
                     <ul class="sub-menu">
-                       <li><a href="{{ url_for("addbook") }}">图书添加</a></li>
-                        <li><a href="{{ url_for("deletebook") }}">图书删除</a></li>
-                        <li><a href="{{ url_for("changebook") }}">图书修改</a></li>
-                        <li><a href="{{ url_for("querybook") }}">图书查询</a></li>
-                        <li><a href="{{ url_for("borrowrecord") }}">借阅记录</a></li>
-                        <li><a href="{{ url_for("readerinfor") }}">读者信息</a></li>
+                       <li><a href="{{ url_for("addbook") }}">Book Adding</a></li>
+                        <li><a href="{{ url_for("deletebook") }}">Book Deletion</a></li>
+                        <li><a href="{{ url_for("changebook") }}">Book Revision</a></li>
+                        <li><a href="{{ url_for("querybook") }}">Book Search</a></li>
+                        <li><a href="{{ url_for("borrowrecord") }}">Borrowing Record</a></li>
+                        <li><a href="{{ url_for("readerinfor") }}">Reader Information</a></li>
                     </ul>
                 </li>
             </ul>
@@ -44,16 +44,16 @@
                     <input type="hidden" name="type" value="search">
                     <table class="search-tab">
                         <tr>
-                            <th width="70">书名:</th>
+                            <th width="70">Name:</th>
                             <td><input style="height: 40px; border-radius: 10px; border: 1px solid gray" name="bookname"
                                        id="bookname" value="{{ name }}"></td>
                             <td>
                                 <input style="display: inline-block; color: white; width: 170px; height: 40px; background-color: #2f96b4; border: 0px; border-radius: 10px"
-                                       type="submit" value="查询书籍">
+                                       type="submit" value="Enquire about books">
                             </td>
 {#                            <td>#}
 {#                                <input style="display: inline-block; color: white; width: 170px; height: 40px; background-color: #6c757d; border: 0px; border-radius: 10px"#}
-{#                                       type="reset" value="重置">#}
+{#                                       type="reset" value="reprovision">#}
 {#                            </td>#}
                         </tr>
                     </table>
@@ -66,11 +66,11 @@
                     <table class="result-tab" width="100%">
                         <tr id="col-title">
                             <th>ID</th>
-                            <th>书名</th>
-                            <th>作者</th>
-                            <th>出版时间</th>
-                            <th>位置</th>
-                            <th>描述</th>
+                            <th>Name</th>
+                            <th>Author</th>
+                            <th>Publication Date</th>
+                            <th>Placement</th>
+                            <th>Description</th>
                         </tr>
                         {% for book in books %}
                             <tr>
