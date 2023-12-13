@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>系统主页-读者信息</title>
+    <title>System Homepage-Reader Information</title>
     <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
 </head>
@@ -11,7 +11,7 @@
     <div class="topbar-inner clearfix">
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a>图书管理系统</a></li>
+                <li><a>Library Management System</a></li>
             </ul>
         </div>
     </div>
@@ -20,18 +20,18 @@
 <div class="container clearfix">
      <div class="sidebar-wrap">
         <div class="sidebar-title">
-            <h1>菜单</h1>
+            <h1>Menu</h1>
         </div>
         <div class="sidebar-content">
             <ul class="sidebar-list">
                 <li>
                     <ul class="sub-menu">
-                       <li><a href="{{ url_for("addbook") }}">图书添加</a></li>
-                        <li><a href="{{ url_for("deletebook") }}">图书删除</a></li>
-                        <li><a href="{{ url_for("changebook") }}">图书修改</a></li>
-                        <li><a href="{{ url_for("querybook") }}">图书查询</a></li>
-                        <li><a href="{{ url_for("borrowrecord") }}">借阅记录</a></li>
-                        <li><a href="{{ url_for("readerinfor") }}">读者信息</a></li>
+                       <li><a href="{{ url_for("addbook") }}">Book Adding</a></li>
+                        <li><a href="{{ url_for("deletebook") }}">Book Deletion</a></li>
+                        <li><a href="{{ url_for("changebook") }}">Book Revision</a></li>
+                        <li><a href="{{ url_for("querybook") }}">Book Search</a></li>
+                        <li><a href="{{ url_for("borrowrecord") }}">Borrowing Record</a></li>
+                        <li><a href="{{ url_for("readerinfor") }}">Reader Information</a></li>
                     </ul>
                 </li>
             </ul>
@@ -44,11 +44,11 @@
                 <div class="result-content">
                     <table class="result-tab" width="100%">
                          <tr id="col-title">
-                            <th>姓名</th>
-                            <th>班级</th>
-                            <th>学号</th>
-                            <th>联系电话</th>
-                            <th>借书数量</th>
+                            <th>Name and surname</th>
+                            <th>Class</th>
+                            <th>Student number</th>
+                            <th>telephone number</th>
+                            <th>Number of books borrowed</th>
                         </tr>
                         {% for reader in readers %}
                           <tr>
