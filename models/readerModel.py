@@ -1,9 +1,9 @@
-#Model层 读者信息
+#Model layer Reader information
 
-#导入数据库操作工具类
+# Import database operation tool class
 from  mysqlUtils import MysqlUtils
 
-#读者bean类
+#Reader bean class
 class reader(object):
     def __init__(self,reader_name,reader_class,reader_learn_num,reader_phone,reader_borrow_num):
        self.reader_name=reader_name
@@ -12,8 +12,8 @@ class reader(object):
        self.reader_phone = reader_phone
        self.reader_borrow_num = reader_borrow_num
 
-#读者model类
-#属性：
+#Readermodel class
+# Properties：
 class readerModel(object):
 
     def get_reader_data(self):
