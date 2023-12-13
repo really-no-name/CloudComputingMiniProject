@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>系统主页-图书删除</title>
+    <title>System Homepage-Book Deletion</title>
     <link rel="stylesheet" type="text/css" href="../static/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
 </head>
@@ -11,7 +11,7 @@
     <div class="topbar-inner clearfix">
         <div class="top-info-wrap">
             <ul class="top-info-list clearfix">
-                <li><a>图书管理系统</a></li>
+                <li><a>Library Management System</a></li>
             </ul>
         </div>
     </div>
@@ -20,18 +20,18 @@
 <div class="container clearfix">
     <div class="sidebar-wrap">
         <div class="sidebar-title">
-            <h1>菜单</h1>
+            <h1>Menu</h1>
         </div>
         <div class="sidebar-content">
             <ul class="sidebar-list">
                 <li>
                     <ul class="sub-menu">
-                       <li><a href="{{ url_for("addbook") }}">图书添加</a></li>
-                        <li><a href="{{ url_for("deletebook") }}">图书删除</a></li>
-                        <li><a href="{{ url_for("changebook") }}">图书修改</a></li>
-                        <li><a href="{{ url_for("querybook") }}">图书查询</a></li>
-                        <li><a href="{{ url_for("borrowrecord") }}">借阅记录</a></li>
-                        <li><a href="{{ url_for("readerinfor") }}">读者信息</a></li>
+                       <li><a href="{{ url_for("addbook") }}">Book Adding</a></li>
+                        <li><a href="{{ url_for("deletebook") }}">Book Deletion</a></li>
+                        <li><a href="{{ url_for("changebook") }}">Book Revision</a></li>
+                        <li><a href="{{ url_for("querybook") }}">Book Search</a></li>
+                        <li><a href="{{ url_for("borrowrecord") }}">Borrowing Record</a></li>
+                        <li><a href="{{ url_for("readerinfor") }}">Reader Information</a></li>
                     </ul>
                 </li>
             </ul>
@@ -45,12 +45,12 @@
                     <table class="result-tab" width="100%">
                         <tr id="col-title">
                             <th>ID</th>
-                            <th>书名</th>
-                            <th>作者</th>
-                            <th>出版时间</th>
-                            <th>位置</th>
-                            <th>描述</th>
-                            <th>操作</th>
+                            <th>Name</th>
+                            <th>Author</th>
+                            <th>Publication Date</th>
+                            <th>Placement</th>
+                            <th>Description</th>
+                            <th>Operation</th>
                         </tr>
                         {% for book in books %}
                             <tr>
@@ -62,7 +62,7 @@
                                 <td>{{ book.remark }}</td>
                                 <td align="center">
                                     <a style="color: red"
-                                       onclick="delete_book('{{ book.number }}','{{ book.name }}',this)">删除</a>
+                                       onclick="delete_book('{{ book.number }}','{{ book.name }}',this)">Delete</a>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -72,17 +72,17 @@
         </div>
     </div>
 </div>
-<!-- 遮罩层 -->
+<!-- Masking layer -->
 <div id="overlay" style="display:none;"></div>
 
 <div id="confirmBox" style="display:none;">
-    <div class="confirm-box-header">确认删除</div>
+    <div class="confirm-box-header">Confirm deletion</div>
     <div class="confirm-box-content">
         <div class="message"></div>
     </div>
     <div class="confirm-box-footer">
-        <button id="yes">删除</button>
-        <button id="no">取消</button>
+        <button id="yes">Delete</button>
+        <button id="no">Cancel</button>
     </div>
 </div>
 
@@ -157,18 +157,18 @@
 </style>
 
 
-<!--删除的js脚本-->
+<!--Removed js scripts-->
 <script>
 
     function delete_book(bookid, bookname, obj) {
-        // 更新消息
-        document.querySelector("#confirmBox .message").innerText = "确认删除书名为：" + bookname + " 的书籍吗？删除后不可恢复哦";
+        // Updated news
+        document.querySelector("#confirmBox .message").innerText = "Are you sure you want to delete a book with title:" + bookname + " You can't recover them after deletion.";
 
-        // 显示遮罩层和弹出窗口
+        // Displaying Mask Layers and Popups
         document.getElementById("overlay").style.display = 'block';
         document.getElementById("confirmBox").style.display = 'block';
 
-        // 点击“删除”按钮
+        // Click on the "Delete" button
         document.getElementById("yes").onclick = function () {
             fetch('deletebook2/' + bookid, {method: 'GET'})
                 .then(response => {
@@ -186,7 +186,7 @@
 
         };
 
-        // 点击“取消”按钮
+        // Click on the "Cancel" button
         document.getElementById("no").onclick = function () {
             document.getElementById("overlay").style.display = 'none';
             document.getElementById("confirmBox").style.display = 'none';
