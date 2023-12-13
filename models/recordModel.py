@@ -1,4 +1,4 @@
-#Model层 借阅记录
+#Model Layer Borrowing Records
 
 #导入数据库操作工具类
 from  mysqlUtils import MysqlUtils
