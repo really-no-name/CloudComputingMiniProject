@@ -5,7 +5,7 @@
 
 Table 1 Login interface
 
-![img](./static/images/register.png) 
+![img](./static/images/register_en.png) 
 
 Table 2 Registration interface
 
@@ -13,17 +13,17 @@ Table 2 Registration interface
 
 Table 3 Add books
 
-![img](./static/images/delete.png) 
+![img](./static/images/delete_en.png) 
 
 Table 4 Delete Books
 
-![img](./static/images/update.png) 
+![img](./static/images/update_en.png) 
 
 Table 5 Modify Books
 
  
 
-![img](./static/images/query.png) 
+![img](./static/images/query_en.png) 
 
 Table 6 Find Books
 
