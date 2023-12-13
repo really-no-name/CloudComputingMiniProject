@@ -160,4 +160,4 @@ Contributions of any kind are welcome. Please ensure that your code follows this
 
 ## License
 
-This project is licensed under the MIT license. See the `LICENSE` file for more information.
+This project uses the Apache 2.0 license. See the `LICENSE` file for more information.

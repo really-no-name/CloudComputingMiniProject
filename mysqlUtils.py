@@ -41,7 +41,7 @@ class MysqlUtils():
         self.conn.commit()
 
     # #Modify books    
-    #Delete first and then add to implement the modification function
+    # Delete first and then add to implement the modification function
     # def change_book(self,number,name,author,publicationdate,location ,remark):
 
     # Find all books
