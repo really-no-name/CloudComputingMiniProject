@@ -55,7 +55,7 @@ def register():
         return render_template("register.html")
 
 
-# 登录界面路由
+# Login interface routing
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == "POST":
@@ -63,18 +63,18 @@ def login():
         username = form.get('username') + ""
         password = form.get('password') + ""
         if not username:
-            flash("请输入用户名")
+            flash("please enter user name")
             return render_template("login.html", password=password)
         if not password:
-            flash("请输入密码")
+            flash("Please enter password")
             return render_template("login.html", username=username)
-        password2 = util.query_Password(username) # 根据账号查询的密码
+        password2 = util.query_Password(username) # Password query based on account
         if (password == password2):
             return render_template("addbook.html")
         else:
-            flash("用户名或密码错误")
+            flash("wrong user name or password")
             return render_template("login.html", username=username, password=password)
-    else: #请求方式为GET时
+    else: #When the request method is GET
         return render_template("login.html")
 
 @app.route('/addbook', methods=['POST', 'GET'])
@@ -88,17 +88,17 @@ def addbook():
         location = form.get('address') + ""
         remark = form.get('description') + ""
         if not number:
-            flash("请输入id")
+            flash("Please enter id")
             return render_template("addbook.html", number=number)
         if not name:
-            flash("请输入书名")
+            flash("Please enter the book title")
             return render_template("addbook.html", number=number,name=name)
         if not location:
-            flash("请输入位置")
+            flash("Please enter location")
             return render_template("addbook.html", number=number,name=name,location=location)
         m = bookModel()
         m.add_book(number,name,author,publicationdate,location,remark)
-        flash("添加图书成功")
+        flash("Book added successfully")
         return render_template("addbook.html")
     else:
         return render_template("addbook.html")
