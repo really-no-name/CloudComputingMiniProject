@@ -1,6 +1,6 @@
-#Model层 用户
+#Model Layer User
 
-#用户类
+# User class
 class UserModel(object):
     def __init__(self,user_name,user_password):
         self.user_name=user_name
