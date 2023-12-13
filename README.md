@@ -1,7 +1,7 @@
 
 ### **Chapter I：Front-end design**
 
-![img](./static/images/login.png) 
+![img](./static/images/login_en.png) 
 
 Table 1 Login interface
 
