@@ -1,9 +1,9 @@
 #Model Layer Borrowing Records
 
-#导入数据库操作工具类
+# Import database operation tool class
 from  mysqlUtils import MysqlUtils
 
-#记录bean类
+# Record bean class
 class record(object):
     def __init__(self,book_id,book_name,location,borrow_stu_name,borrow_time):
         self.book_id=book_id
@@ -12,7 +12,7 @@ class record(object):
         self.borrow_stu_name=borrow_stu_name
         self.borrow_time=borrow_time
 
-#记录model类
+# Record bean class
 class recordModel(object):
     def get_record_data(self):
         self.util =MysqlUtils('34.147.132.176','demo','fcsummer123456','library','utf8')
