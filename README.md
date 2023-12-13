@@ -43,19 +43,6 @@ Table 8 Reader information
 
 Table 1 book information table
 
-| 字段名称        | 数据类型 | 默认值 | 长度 | 说明                       |
-| --------------- | -------- | ------ | ---- | -------------------------- |
-| ID              | Int      | 无     | 4    | 数据Id值                   |
-| Name            | Varchar  | 无     | 20   | 书名                       |
-| Number          | Varchar  | 无     | 8    | 书籍序列号                 |
-| Author          | Varchar  | 无     | 10   | 作者                       |
-| Publicationdate | Date     | 无     | 10   | 出版时间                   |
-| Isborrow        | Int      | 无     | 1    | 借阅状态(1:被借，0:未被借) |
-| Remark          | Varchar  | 无     | 50   | 图书简介                   |
-| Location        | Varchar  | 无     | 20   | 书籍地点                   |
-| Borrowname      | Varchar  | 无     | 20   | 借书人姓名                 |
-| Borrowtime      | Date     | 无     | 10   | 借书时间                   |
-
 | Field name      | Data type  | Default value | Length | Description                 |
 | --------------- | ---------- | ------------- | ------ | --------------------------- |
 | ID              | Int        | None          | 4      | DataId value                |
@@ -69,45 +56,45 @@ Table 1 book information table
 | Borrowname | Varchar | None | 20 | Borrower name |
 | Borrowtime | Date | None | 10 | Borrowing time |
 
-表2  student读者信息表
+Table 2 student reader information table
 
-| 字段名称     | 数据类型 | 默认值 | 长度 | 说明     |
-| ------------ | -------- | ------ | ---- | -------- |
-| ID           | Int      | 无     | 4    | 数据Id值 |
-| Name         | Varchar  | 无     | 10   | 读者姓名 |
-| Psw          | Varchar  | 无     | 10   | 密码     |
-| Class        | Varchar  | 无     | 10   | 班级     |
-| Learnnumber  | Varchar  | 无     | 20   | 学号     |
-| Phonenumber  | Varchar  | 无     | 20   | 手机号   |
-| Borrownumber | Varchar  | 无     | 20   | 借书数量 |
+| Field name   | Data type | Default value | Length | Description |
+| ------------ | --------- | ------------- | ------ | -------- |
+| ID | Int | None | 4 | DataId value |
+| Name | Varchar | None | 10 | Reader Name |
+| Psw | Varchar | None | 10 | Password |
+| Class | Varchar | None | 10 | Class |
+| Learnnumber | Varchar | None | 20 | Student number |
+| Phonenumber | Varchar | None | 20 | Phone number |
+| Borrownumber | Varchar | None | 20 | Number of books borrowed |
 
  
 
 
-表3  user图书管理员信息表
+Table 3 user librarian information table
 
-| 字段名称 | 数据类型 | 默认值 | 长度 | 说明       |
+| Field name | Data type | Default value | Length | Description |
 | -------- | -------- | ------ | ---- | ---------- |
-| ID       | Int      | 无     | 4    | 数据Id值   |
-| Name     | Varchar  | 无     | 10   | 管理员姓名 |
-| Psw      | Varchar  | 无     | 10   | 密码       |
+| ID | Int | None | 4 | DataId value |
+| Name | Varchar | None | 10 | Administrator Name |
+| Psw | Varchar | None | 10 | Password |
 
  
 
 
-表4  record 结束记录信息表
+Table 4 record end record information table
 
-| 字段名称   | 数据类型 | 默认值 | 长度 | 说明         |
+| Field name | Data type | Default value | Length | Description |
 | ---------- | -------- | ------ | ---- | ------------ |
-| ID         | Int      | 无     | 4    | 数据Id值     |
-| Readername | Varchar  | 无     | 10   | 管理员姓名   |
-| Booknumber | Varchar  | 无     | 10   | 密码         |
-| Borrowdate | Date     | 无     | 10   | 借书时间     |
-| Returndate | Date     | 无     | 10   | 还书时间     |
-| Remark     | Varchar  | 无     | 10   | 记录备注信息 |
+| ID | Int | None | 4 | DataId value |
+| Readername | Varchar | None | 10 | Administrator Name |
+| Booknumber | Varchar | None | 10 | Password |
+| Borrowdate | Date | None | 10 | Borrowing time |
+| Returndate | Date | None | 10 | Book return time |
+| Remark | Varchar | None | 10 | Record remark information |
 
  
 
-### **第三章：总结**
+### **Chapter 3: Summary**
 
-这个图书馆项目的CURD全部实现，并且前端使用fetch请求REST-API服务接口，进行增删改查，对接GCP-Mysql，进行数据的存储。
+CURD of this library project is fully implemented, and the front-end uses fetch to request the REST-API service interface, perform additions, deletions, modifications, and queries, and connects to GCP-Mysql for data storage.
