@@ -103,40 +103,40 @@ def addbook():
     else:
         return render_template("addbook.html")
 
-# 删除书籍界面
+# Delete book interface
 @app.route('/deletebook', methods=['GET','POST'])
 def deletebook():
     # u = util.query_all_book()
-    #MVC模式重构
+    #MVC pattern refactoring
     m = bookModel()
     books = m.get_all_book_data()
     return render_template("deletebook.html", books=books)
 
-#负责删除书籍的路由 带参数：书籍名称
+#Route responsible for deleting books with parameters: book name
 @app.route('/deletebook2/<bookid>', methods=['GET'])
 def deletebook2(bookid):
-    #先删除所选书籍后查询
+    #Delete the selected books first and then query
     m = bookModel()
     m.delete_one_book_by_id(bookid)
     books = m.get_all_book_data()
     flash(bookid)
     return render_template("deletebook.html", books=books)
 
-# 修改书籍界面
+# Modify book interface
 @app.route('/changebook', methods=['POST', 'GET'])
 def changebook():
     # u = util.query_all_book()
-    # MVC模式重构
+    # MVC pattern refactoring
     m = bookModel()
     books = m.get_all_book_data()
     return render_template("changebook.html", books=books)
 
-# 修改书籍界面 详细界面
+# Modify book interface detailed interface
 @app.route('/changebookinfor/<bookid>', methods=['POST', 'GET'])
 def changebookinfor(bookid):
     detail=util.query_one_book_byid(bookid)
     if request.method == "POST":
-        form = request.form # 若点击修改 则先删除 后添加
+        form = request.form # If you click Modify, delete first and then add.
         number = form.get('number') + ""
         name = form.get('bookname') + ""
         author = form.get('author') + ""
@@ -144,17 +144,17 @@ def changebookinfor(bookid):
         location = form.get('address') + ""
         remark = form.get('description') + ""
         if not number:
-            flash("请输入id")
+            flash("Please enter id")
             return render_template("changebookinfor.html")
         if not name:
-            flash("请输入书名")
+            flash("Please enter the book title")
             return render_template("changebookinfor.html", number=number)
         if not location:
-            flash("请输入位置")
+            flash("Please enter location")
             return render_template("changebookinfor.html", number=number,name=name)
         util.delete_book(bookid)
         util.add_book(number, name, author, publicationdate, location, remark)
-        flash("修改图书成功")
+        flash("Book modified successfully")
         return render_template("changebookinfor.html",detail=detail)
     else:
         return render_template("changebookinfor.html",detail=detail)
@@ -165,9 +165,9 @@ def querybook():
     if request.method == "POST":
         name = request.values.get('bookname').strip()
 
-        # 使用 LIKE 查询
+        # Use LIKE query
         if name:
-            # 构造 LIKE 查询字符串
+            # Constructing a LIKE query string
             like_string = f"%{name}%"
             onebook = m.get_books_like_name(like_string)
         else:
@@ -177,26 +177,27 @@ def querybook():
     else:
         books = m.get_all_book_data()
         return render_template("querybook.html", books=books)
-#图书借阅信息界面
+        
+#Book borrowing information interface
 @app.route('/borrowrecord', methods=['POST', 'GET'])
 def borrowrecord():
     # u = util.query_borrowrecord()
-    # MVC模式重构
+    # MVC pattern refactoring
     m = recordModel()
     records = m.get_record_data()
     return render_template("borrowrecord.html", records=records)
 
-#读者信息信息界面
+#Reader information information interface
 @app.route('/readerinfor', methods=['POST', 'GET'])
 def readerinfor():
     # u = util.query_readerinfor()
-    #MVC模式重构
+    #MVC pattern refactoring
     m=readerModel()
     readers=m.get_reader_data()
     return render_template("readerinfor.html", readers=readers)
 
 
-# 错误界面（异常处理）
+# Error interface (exception handling)
 @app.errorhandler(404)
 def not_found(e):
     return render_template("404.html")
