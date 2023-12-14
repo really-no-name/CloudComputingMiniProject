@@ -75,8 +75,6 @@ Table 4 Delete Books
 
 Table 5 Modify Books
 
- 
-
 ![img](./static/images/query_en.png) 
 
 Table 6 Find Books
