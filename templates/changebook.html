@@ -169,15 +169,16 @@
 
         // Confirm modification
         document.getElementById("yes").onclick = function () {
-            window.location.href = "changebookinfor/" + bookid;
+            // window.location.href = "changebookinfor/" + bookid; //X_Cange
             fetch('changebookinfor/' + bookid, {method: 'GET'})
                 .then(response => {
                     if (response.ok) {
                         // Refresh the page on successful deletion
-                        window.location.reload();
+                        // window.location.reload(); //X_Cange
+                        window.location.href = "changebookinfor/" + bookid; //X_Cange
                     } else {
                         // Handle errors or show a message if needed
-                        console.error('Error deleting book');
+                        // console.error('Error deleting book'); //X_Change
                     }
                 }).finally(() => {
                 document.getElementById("overlay").style.display = 'none';

@@ -18,7 +18,9 @@ class bookModel(object):
 
     # Initialise Establish database connection
     def __init__(self):
-        self.util = MysqlUtils('34.147.132.176', 'demo', 'fcsummer123456', 'library', 'utf8')
+        self.util = MysqlUtils('34.147.132.176', 'demo', 'fcsummer123456', 'library', 'utf8') # X_Change
+        # MysqlUtils('34.147.132.176', 'demo', 'fcsummer123456', 'library', 'utf8') # X_Change
+        # self.util = MysqlUtils('114.115.163.29', 'root', 'kun20021127', 'library', 'utf8') # X_Change
 
     #Search All Books
     def get_all_book_data(self):

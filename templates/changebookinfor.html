@@ -87,7 +87,8 @@
     <div class="result-wrap">
         <div class="result-content">
             {% for i in detail %}
-                <form id="add-book" action="/changebookinfor/{{ i[0] }}" method="POST">
+                <!-- <form id="add-book" action="/changebookinfor/{{ i[0] }}" method="POST">  X_Change -->
+                <form id="add-book" action="{{ url_for('changebookinfor', bookid=i[0]) }}" method="POST">
                     <table class="insert-tab">
                         <tbody>
                             <tr>

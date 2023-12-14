@@ -12,7 +12,8 @@ import json
 from models.readerModel import readerModel
 from models.recordModel import recordModel
 from models.bookModel import bookModel
-util=MysqlUtils('34.147.132.176','demo','fcsummer123456','library','utf8')
+# MysqlUtils('114.115.163.29','root','kun20021127','library','utf8')
+util=MysqlUtils('34.147.132.176', 'demo', 'fcsummer123456', 'library', 'utf8') # X_Change
 #All book information
 # u=util.query_all_book()
 
@@ -206,6 +207,7 @@ def create_app():
    return app
 
 if __name__ == '__main__':
-    from waitress import serve
+    # from waitress import serve # X_Change
 
-    serve(app, host="0.0.0.0", port=8721)
+    # serve(app, host="0.0.0.0", port=8721) # X_Change
+    app.run("0.0.0.0",8721) # X_Change

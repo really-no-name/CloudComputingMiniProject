@@ -66,7 +66,8 @@ class MysqlUtils():
 
     # Borrowing record query
     def query_borrowrecord(self):
-        sqlstr = "SELECT number ,name,location ,borrowname,borrowtime FROM book WHERE isborrow = 1"
+        # sqlstr = "SELECT number ,name,location ,borrowname,borrowtime FROM book WHERE isborrow = 1" # X_Change
+        sqlstr = "SELECT number ,name,location ,borrowname,borrowtime FROM book" # X_Change
         self.cur.execute(sqlstr)
         result = self.cur.fetchall()
         return result
@@ -95,7 +96,8 @@ class MysqlUtils():
             password=str(row[0])
             return password
     def query_LikeBook(self,book_name):
-        sqlstr = "SELECT * FROM book WHERE name like '" + book_name + "'"
+        # sqlstr = "SELECT * FROM book WHERE name like '" + book_name + "'" # X_Change
+        sqlstr = "SELECT number,name,author,publicationdate,location ,remark FROM book WHERE name like '" + book_name + "'" # X_Change
         self.cur.execute(sqlstr)
         result = self.cur.fetchall()
         return result

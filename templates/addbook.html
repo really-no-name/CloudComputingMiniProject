@@ -111,39 +111,45 @@
                                 <th width="120">
                                     <i class="require-red">*</i>id：</th>
                                 <td>
-                                    <input value="{{ number }}" class="common-text required" id="title" name="number" size="50" value="" type="text">
+                                    <!-- <input value="{{ number }}" class="common-text required" id="title" name="number" size="50" value="" type="text"> X_Change -->
+                                    <input placeholder="Please enter ID" value="{{ number }}" class="common-text required" id="title" name="number" size="50" value="" type="text">
                                 </td>
                             </tr>
                              <tr>
                                 <th>
-                                    <i class="require-red">*</i>Name：</th>
+                                    <i class="require-red">*</i>Name:</th>
                                 <td>
-                                    <input  value="{{ name }}" class="common-text required" id="title" name="bookname" size="50" value="" type="text">
+                                    <!-- <input  value="{{ name }}" class="common-text required" id="title" name="bookname" size="50" value="" type="text"> X_Change-->
+                                    <input placeholder="Please enter name"  value="{{ name }}" class="common-text required" id="title" name="bookname" size="50" value="" type="text"><!-- X_Change-->
                                 </td>
                             </tr>
                             <tr>
-                                <th>Author：</th>
+                                <th>Author:</th>
                                 <td>
-                                    <input value="{{ author }}" class="common-text" name="author" size="50"  type="text">
+                                    <!-- <input value="{{ author }}" class="common-text" name="author" size="50"  type="text"> --><!-- X_Change-->
+                                    <input placeholder="Please enter author"  value="{{ author }}" class="common-text" name="author" size="50"  type="text"><!-- X_Change-->
                                 </td>
                             </tr>
                             <tr>
-                                <th>Publication Date：</th>
+                                <th>Publication Date:</th>
                                 <td>
-                                    <input value="{{ publicationdate }}" type="date" name="pdate" id="pdate" min="1900-01-01" class="common-text">
+                                    <!-- <input value="{{ publicationdate }}" type="date" name="pdate" id="pdate" min="1900-01-01" class="common-text"> X_Change-->
+                                    <input placeholder="Please enter year-month-day"   value="{{ publicationdate }}" type="text" name="pdate" id="pdate" min="1900-01-01" class="common-text" lang="en"><!--X_Change-->
                                 </td>
                             </tr>
                             <tr>
                                <th>
-                                    <i class="require-red">*</i>Placement：</th>
+                                    <i class="require-red">*</i>Placement:</th>
                                 <td>
-                                    <input value="{{ location }}" class="common-text" name="address" size="50" type="text">
+                                    <!-- <input value="{{ location }}" class="common-text" name="address" size="50" type="text"> --><!--X_Change-->
+                                    <input placeholder="Please enter location" value="{{ location }}" class="common-text" name="address" size="50" type="text"><!--X_Change-->
                                 </td>
                             </tr>
                             <tr>
-                                <th>Description：</th>
+                                <th>Description:</th>
                                 <td>
-                                    <input  value="{{ remark }}" class="common-text" name="description" size="50"  type="text">
+                                    <!-- <input  value="{{ remark }}" class="common-text" name="description" size="50"  type="text"> --><!--X_Change-->
+                                    <input placeholder="Please enter description"  value="{{ remark }}" class="common-text" name="description" size="50"  type="text"><!--X_Change-->
                                 </td>
                             </tr>
                         </tbody>
