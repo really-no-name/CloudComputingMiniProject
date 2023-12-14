@@ -160,6 +160,8 @@ CURD of this library project is fully implemented, and the front-end uses fetch 
 
 ## Contribute
 
+This project is developed by Bolun Xu(220234168), Xudong Hao(230508240) and Zhihan Zhang(220294922).
+
 Contributions of any kind are welcome. Please ensure that your code follows this project's design and coding guidelines.
 
 ## License
