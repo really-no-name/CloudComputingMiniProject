@@ -90,7 +90,7 @@ Table 8 Reader information
 
 ### **Chapter 2: Database Design**
 
-#### **4.1 **Design of data table and input of some initial data
+#### Design of data table and input of some initial data
 
 
 
