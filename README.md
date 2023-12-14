@@ -84,7 +84,7 @@ Table 6 Find Books
 
 Table 7 Borrowing records
 
-![img](./static/images/info_en.png) 
+![img](./static/images/Info_en.png) 
 
 Table 8 Reader information
 
