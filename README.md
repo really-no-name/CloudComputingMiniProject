@@ -63,7 +63,7 @@ Table 1 Login interface
 
 Table 2 Registration interface
 
-![img](./static/images/add.png) 
+![img](./static/images/add_en.png) 
 
 Table 3 Add books
 
@@ -72,6 +72,7 @@ Table 3 Add books
 Table 4 Delete Books
 
 ![img](./static/images/update_en.png) 
+![img](./static/images/update_info_en.png) 
 
 Table 5 Modify Books
 
@@ -79,11 +80,11 @@ Table 5 Modify Books
 
 Table 6 Find Books
 
-![img](./static/images/record.png) 
+![img](./static/images/record_en.png) 
 
 Table 7 Borrowing records
 
-![img](./static/images/info.png) 
+![img](./static/images/info_en.png) 
 
 Table 8 Reader information
 
