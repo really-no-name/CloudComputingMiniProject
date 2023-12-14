@@ -53,6 +53,11 @@ Visit `http://External IP:8721` to view the application.
 - **Revise book in collection**: Send a PUT request to `/changebook` to update a specific book in your collection.
 - **Delete book from collection**: Send a DELETE request to `/deletebook` to remove a book from your collection.
 
+## Architecture
+
+![img](./static/images/architecture.png) 
+
+
 ### **Chapter I：Front-end design**
 
 ![img](./static/images/login_en.png) 
